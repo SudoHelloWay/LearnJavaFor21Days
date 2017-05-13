@@ -1,0 +1,44 @@
+#1
+VolcanoRobot.java:
+class VolcanoRobot{   
+//    定义了一个名为VolcanRobot的类
+    String status;
+    int speed;
+    float temperature;
+    
+    void checkTemperature() {
+       if (temperature > 600)  {
+           status = "reurning home";
+           speed = 5;
+           
+       }
+    }
+    void showAttributes(){
+        System.err.println("Status:" + status);
+        System.out.println("Speed:"+ speed);
+        System.out.println("Temperature:"+temperature);
+    }
+    
+}
+#2
+VolcanoApplication.java:
+class VolcanoApplication{
+    public static void main(String[] arguments) {
+        VolcanoRobot dante = new VolcanoRobot();
+        dante.status = "exploring";
+        dante.speed =2;
+        dante.temperature = 510;
+        
+        dante.showAttributes();
+        System.err.println("Increasing speed to 3.");
+        dante.speed =3;
+        dante.showAttributes();
+        System.err.println("changing temperture to 670.");
+        dante.temperature = 670;
+        dante.showAttributes();
+        System.err.println("Checking the temperature.");
+        dante.checkTemperature();
+        dante.showAttributes();
+    }
+            
+}
